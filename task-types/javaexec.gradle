@@ -1,0 +1,16 @@
+apply plugin: "java"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	runtime 'commons-codec:commons-codec:1.5'
+}
+
+task encode(type: JavaExec, dependsOn: classes) {
+	main = ""
+	args = ""
+	classpath sourceSets.main.classesDir
+	classpath configuration.runtime
+}
